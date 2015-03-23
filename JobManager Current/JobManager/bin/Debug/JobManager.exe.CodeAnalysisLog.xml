@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 12.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="12.0">
+ <Targets>
+  <Target Name="E:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram\bin\Debug\JobManager.exe">
+   <Modules>
+    <Module Name="jobmanager.exe">
+     <Namespaces>
+      <Namespace Name="TimeSheetProgram">
+       <Types>
+        <Type Name="editJob" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#fillJobCodesList()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-03-20 21:10:09Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="editJob.cs" Line="150">Object 'ReadJobCodes' can be disposed more than once in method 'editJob.fillJobCodesList()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 150</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="forgotPasswordFrm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#changeUsersPassword(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-03-20 21:10:09Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="forgotPassword.cs" Line="99">Object 'WritePassword' can be disposed more than once in method 'forgotPasswordFrm.changeUsersPassword(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 98, 99, 101</Issue>
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="forgotPassword.cs" Line="98">Object 'write' can be disposed more than once in method 'forgotPasswordFrm.changeUsersPassword(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 98</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="jobControls" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#loadJob(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-03-20 21:10:09Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="jobControls.cs" Line="230">Object 'loadSelectedJob' can be disposed more than once in method 'jobControls.loadJob(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 230</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#newJob(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-03-20 21:10:09Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="jobControls.cs" Line="141">Object 'creatJob' can be disposed more than once in method 'jobControls.newJob(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 141</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#saveJob(System.String,System.String,System.DateTime,System.DateTime,System.String[],System.String,System.Double,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-03-20 21:10:09Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="jobControls.cs" Line="196">Object 'saveJob' can be disposed more than once in method 'jobControls.saveJob(string, string, DateTime, DateTime, string[], string, double, string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 196</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="login" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#login_Load(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-03-20 21:10:09Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="login.cs" Line="117">Object 'createJobCodesFile' can be disposed more than once in method 'login.login_Load(object, EventArgs)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 117</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="userControls" Kind="Class" Accessibility="Assembly" ExternallyVisible="False">
+         <Members>
+          <Member Name="#createNewJobForSelectedUser(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-03-20 21:10:09Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="userControls.cs" Line="79">Object 'creatJob' can be disposed more than once in method 'userControls.createNewJobForSelectedUser(string, string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 79</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#createUser(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-03-20 21:10:09Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="userControls.cs" Line="45">Object 'WritePassword' can be disposed more than once in method 'userControls.createUser(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 44, 45, 46</Issue>
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="userControls.cs" Line="44">Object 'write' can be disposed more than once in method 'userControls.createUser(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 44</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="userLogin" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#accountLogin()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-03-20 21:10:09Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="userLogin.cs" Line="106">Object 'ReadUser' can be disposed more than once in method 'userLogin.accountLogin()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 105, 106, 107</Issue>
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="userLogin.cs" Line="105">Object 'read' can be disposed more than once in method 'userLogin.accountLogin()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 105</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="userScreenFrm" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#fillJobCodesList()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-03-20 21:10:09Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="userScreen.cs" Line="405">Object 'ReadJobCodes' can be disposed more than once in method 'userScreenFrm.fillJobCodesList()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 405</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#fillJobList()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-03-20 21:10:09Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="userScreen.cs" Line="376">Object 'ReadJobName' can be disposed more than once in method 'userScreenFrm.fillJobList()'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 376</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#fillSelectedUsersJobList(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2015-03-20 21:10:09Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="e:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram" File="userScreen.cs" Line="484">Object 'ReadJobName' can be disposed more than once in method 'userScreenFrm.fillSelectedUsersJobList(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 484</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 484</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="12.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

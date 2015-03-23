@@ -1,0 +1,29 @@
+C:\Users\ben\Desktop\TimeSheetProgram\TimeSheetProgram\obj\Debug\TimeSheetProgram.forgotPasswordFrm.resources
+C:\Users\ben\Desktop\TimeSheetProgram\TimeSheetProgram\obj\Debug\TimeSheetProgram.login.resources
+C:\Users\ben\Desktop\TimeSheetProgram\TimeSheetProgram\obj\Debug\TimeSheetProgram.Properties.Resources.resources
+C:\Users\ben\Desktop\TimeSheetProgram\TimeSheetProgram\obj\Debug\TimeSheetProgram.csproj.GenerateResource.Cache
+C:\Users\ben\Desktop\TimeSheetProgram\TimeSheetProgram\bin\Debug\TimeSheetProgram.exe.config
+C:\Users\ben\Desktop\TimeSheetProgram\TimeSheetProgram\bin\Debug\TimeSheetProgram.exe
+C:\Users\ben\Desktop\TimeSheetProgram\TimeSheetProgram\bin\Debug\TimeSheetProgram.pdb
+C:\Users\ben\Desktop\TimeSheetProgram\TimeSheetProgram\obj\Debug\TimeSheetProgram.newJobFrm.resources
+C:\Users\ben\Desktop\TimeSheetProgram\TimeSheetProgram\obj\Debug\TimeSheetProgram.exe
+C:\Users\ben\Desktop\TimeSheetProgram\TimeSheetProgram\obj\Debug\TimeSheetProgram.pdb
+C:\Users\ben\Desktop\TimeSheetProgram\TimeSheetProgram\obj\Debug\TimeSheetProgram.csprojResolveAssemblyReference.cache
+C:\Users\ben\Desktop\TimeSheetProgram\TimeSheetProgram\obj\Debug\TimeSheetProgram.userScreenFrm.resources
+C:\Users\ben\Desktop\TimeSheetProgram Current\TimeSheetProgram\bin\Debug\TimeSheetProgram.exe.config
+C:\Users\ben\Desktop\TimeSheetProgram Current\TimeSheetProgram\bin\Debug\TimeSheetProgram.exe
+C:\Users\ben\Desktop\TimeSheetProgram Current\TimeSheetProgram\bin\Debug\TimeSheetProgram.pdb
+C:\Users\ben\Desktop\TimeSheetProgram Current\TimeSheetProgram\obj\Debug\TimeSheetProgram.forgotPasswordFrm.resources
+C:\Users\ben\Desktop\TimeSheetProgram Current\TimeSheetProgram\obj\Debug\TimeSheetProgram.login.resources
+C:\Users\ben\Desktop\TimeSheetProgram Current\TimeSheetProgram\obj\Debug\TimeSheetProgram.newJobFrm.resources
+C:\Users\ben\Desktop\TimeSheetProgram Current\TimeSheetProgram\obj\Debug\TimeSheetProgram.Properties.Resources.resources
+C:\Users\ben\Desktop\TimeSheetProgram Current\TimeSheetProgram\obj\Debug\TimeSheetProgram.userScreenFrm.resources
+C:\Users\ben\Desktop\TimeSheetProgram Current\TimeSheetProgram\obj\Debug\TimeSheetProgram.csproj.GenerateResource.Cache
+C:\Users\ben\Desktop\TimeSheetProgram Current\TimeSheetProgram\obj\Debug\TimeSheetProgram.exe
+C:\Users\ben\Desktop\TimeSheetProgram Current\TimeSheetProgram\obj\Debug\TimeSheetProgram.pdb
+C:\Users\ben\Desktop\TimeSheetProgram Current\TimeSheetProgram\obj\Debug\TimeSheetProgram.csprojResolveAssemblyReference.cache
+C:\Users\ben\Desktop\TimeSheetProgram Current\TimeSheetProgram\obj\Debug\TimeSheetProgram.editJob.resources
+E:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram\bin\Debug\TimeSheetProgram.exe.config
+E:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram\obj\Debug\TimeSheetProgram.exe
+E:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram\obj\Debug\TimeSheetProgram.pdb
+E:\TimeSheetProgram 04-20-15 Working User Job Controls and Edit\TimeSheetProgram\bin\Debug\JobManager.exe.config
