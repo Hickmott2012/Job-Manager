@@ -100,11 +100,11 @@ namespace TimeSheetProgram
             jobNumber = selectedJobNumber;
             currentUsername = recivedUsername;
             userNameLabel.Text = currentUsername;
-            this.Text = "Edit Job For " + currentUsername;
+            this.Text = String.Format("Edit Job For {0}", currentUsername);
 
             jobControls loadSelectedJob = new jobControls(currentUsername);
             loadSelectedJob.loadJob(selectedJobNumber);
-            if (loadSelectedJob.JobCode != null)
+            if (!String.IsNullOrWhiteSpace(loadSelectedJob.JobCode))
             {
                 if (jobCodesComboBox.Items.Contains(loadSelectedJob.JobCode))
                 {
