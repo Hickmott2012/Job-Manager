@@ -100,11 +100,11 @@ namespace TimeSheetProgram
             jobNumber = selectedJobNumber;
             currentUsername = recivedUsername;
             userNameLabel.Text = currentUsername;
-            this.Text = "Edit Job For " + currentUsername;
+            this.Text = String.Format("Edit Job For {0}", currentUsername);
 
             jobControls loadSelectedJob = new jobControls(currentUsername);
             loadSelectedJob.loadJob(selectedJobNumber);
-            if (loadSelectedJob.JobCode != null)
+            if (!String.IsNullOrWhiteSpace(loadSelectedJob.JobCode))
             {
                 if (jobCodesComboBox.Items.Contains(loadSelectedJob.JobCode))
                 {
@@ -126,9 +126,11 @@ namespace TimeSheetProgram
                     }
                 }
             }
-            lastTimeUpdateLabel.Text = "Last Time Updated: \n"
-                + File.GetLastWriteTime(REQUIREDFOLDER + currentUsername + "\\" + selectedJobNumber + JOBFILEEXTENSHION).ToShortDateString()
-                + "\n" + File.GetLastWriteTime(REQUIREDFOLDER + currentUsername + "\\" + selectedJobNumber + JOBFILEEXTENSHION).ToShortTimeString();
+            var lastWriteTime =
+                File.GetLastWriteTime(REQUIREDFOLDER + currentUsername + "\\" + selectedJobNumber + JOBFILEEXTENSHION);
+
+            lastTimeUpdateLabel.Text = String.Format("Last Time Updated: {0}{1}{2}{3}", Environment.NewLine,
+                lastWriteTime.ToShortDateString(), Environment.NewLine, lastWriteTime.ToShortDateString());
 
             jobNameLabel.Text = JobName;
 
@@ -168,11 +170,11 @@ namespace TimeSheetProgram
             string jobStatus = JobStatus;
             string jobNotes = jobNotesTextBox.Text;
 
-           
+
             //Fill Employees array
             for (int i = 0; i < amountOfEmployees; i++)
                 jobEmployees[i] = employeeListBox.Items[i].ToString();
-            
+
 
             //try checking if the estimate total is an int
             if (double.TryParse(jobEstimateTextBox.Text, out jobEstimateCost) == false)
@@ -209,7 +211,7 @@ namespace TimeSheetProgram
             }
 
             //Check to see if there is a job status selected
-            if(JobStatus == "No Job Selected")
+            if (JobStatus == "No Job Selected")
             {
                 saveSuccessful = false;
                 jobStatusErrorLabel.Visible = true;
@@ -238,10 +240,10 @@ namespace TimeSheetProgram
         private void addEmployeeBtn_Click(object sender, EventArgs e)
         {
             //Add employee
-            if (newEmployeeTextBox.Text != "")
+            if (!String.IsNullOrWhiteSpace(newEmployeeTextBox.Text))
             {
                 employeeListBox.Items.Add(newEmployeeTextBox.Text);
-                newEmployeeTextBox.Text = "";
+                newEmployeeTextBox.Text = String.Empty;
                 newEmployeeTextBox.Focus();
             }
         }
