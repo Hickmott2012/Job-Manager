@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.jobControlPanel = new System.Windows.Forms.Panel();
+            this.cancelSaveBtn = new System.Windows.Forms.Button();
             this.jobCodesComboBox = new System.Windows.Forms.ComboBox();
             this.jobStatusErrorLabel = new System.Windows.Forms.Label();
             this.jobCodeErrorLabel = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.jobNameLabel = new System.Windows.Forms.Label();
             this.jobNumberLabel = new System.Windows.Forms.Label();
             this.jobNumberLabelText = new System.Windows.Forms.Label();
-            this.cancelSaveBtn = new System.Windows.Forms.Button();
             this.jobControlPanel.SuspendLayout();
             this.jobEmployeesPanel.SuspendLayout();
             this.jobStatusPanel.SuspendLayout();
@@ -94,6 +94,16 @@
             this.jobControlPanel.Name = "jobControlPanel";
             this.jobControlPanel.Size = new System.Drawing.Size(750, 370);
             this.jobControlPanel.TabIndex = 50;
+            // 
+            // cancelSaveBtn
+            // 
+            this.cancelSaveBtn.Location = new System.Drawing.Point(10, 333);
+            this.cancelSaveBtn.Name = "cancelSaveBtn";
+            this.cancelSaveBtn.Size = new System.Drawing.Size(120, 26);
+            this.cancelSaveBtn.TabIndex = 59;
+            this.cancelSaveBtn.Text = "Cancel Job";
+            this.cancelSaveBtn.UseVisualStyleBackColor = true;
+            this.cancelSaveBtn.Click += new System.EventHandler(this.cancelSaveBtn_Click);
             // 
             // jobCodesComboBox
             // 
@@ -382,7 +392,7 @@
             // 
             this.userNameLabel.AutoSize = true;
             this.userNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameLabel.Location = new System.Drawing.Point(201, 11);
+            this.userNameLabel.Location = new System.Drawing.Point(219, 11);
             this.userNameLabel.Name = "userNameLabel";
             this.userNameLabel.Size = new System.Drawing.Size(86, 20);
             this.userNameLabel.TabIndex = 53;
@@ -423,16 +433,6 @@
             this.jobNumberLabelText.Size = new System.Drawing.Size(89, 17);
             this.jobNumberLabelText.TabIndex = 56;
             this.jobNumberLabelText.Text = "Job Number:";
-            // 
-            // cancelSaveBtn
-            // 
-            this.cancelSaveBtn.Location = new System.Drawing.Point(10, 333);
-            this.cancelSaveBtn.Name = "cancelSaveBtn";
-            this.cancelSaveBtn.Size = new System.Drawing.Size(120, 26);
-            this.cancelSaveBtn.TabIndex = 59;
-            this.cancelSaveBtn.Text = "Cancel Job";
-            this.cancelSaveBtn.UseVisualStyleBackColor = true;
-            this.cancelSaveBtn.Click += new System.EventHandler(this.cancelSaveBtn_Click);
             // 
             // editJob
             // 
