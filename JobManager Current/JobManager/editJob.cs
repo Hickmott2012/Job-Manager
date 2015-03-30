@@ -240,10 +240,10 @@ namespace TimeSheetProgram
         private void addEmployeeBtn_Click(object sender, EventArgs e)
         {
             //Add employee
-            if (newEmployeeTextBox.Text != "")
+            if (!String.IsNullOrWhiteSpace(newEmployeeTextBox.Text))
             {
                 employeeListBox.Items.Add(newEmployeeTextBox.Text);
-                newEmployeeTextBox.Text = "";
+                newEmployeeTextBox.Text = String.Empty;
                 newEmployeeTextBox.Focus();
             }
         }
