@@ -126,7 +126,7 @@ namespace TimeSheetProgram
                     }
                 }
             }
-            var lastWriteTime =
+            DateTime lastWriteTime =
                 File.GetLastWriteTime(REQUIREDFOLDER + currentUsername + "\\" + selectedJobNumber + JOBFILEEXTENSHION);
 
             lastTimeUpdateLabel.Text = String.Format("Last Time Updated: {0}{1}{2}{3}", Environment.NewLine,
