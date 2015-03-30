@@ -126,9 +126,11 @@ namespace TimeSheetProgram
                     }
                 }
             }
-            lastTimeUpdateLabel.Text = "Last Time Updated: \n"
-                + File.GetLastWriteTime(REQUIREDFOLDER + currentUsername + "\\" + selectedJobNumber + JOBFILEEXTENSHION).ToShortDateString()
-                + "\n" + File.GetLastWriteTime(REQUIREDFOLDER + currentUsername + "\\" + selectedJobNumber + JOBFILEEXTENSHION).ToShortTimeString();
+            var lastWriteTime =
+                File.GetLastWriteTime(REQUIREDFOLDER + currentUsername + "\\" + selectedJobNumber + JOBFILEEXTENSHION);
+
+            lastTimeUpdateLabel.Text = String.Format("Last Time Updated: {0}{1}{2}{3}", Environment.NewLine,
+                lastWriteTime.ToShortDateString(), Environment.NewLine, lastWriteTime.ToShortDateString());
 
             jobNameLabel.Text = JobName;
 
@@ -168,11 +170,11 @@ namespace TimeSheetProgram
             string jobStatus = JobStatus;
             string jobNotes = jobNotesTextBox.Text;
 
-           
+
             //Fill Employees array
             for (int i = 0; i < amountOfEmployees; i++)
                 jobEmployees[i] = employeeListBox.Items[i].ToString();
-            
+
 
             //try checking if the estimate total is an int
             if (double.TryParse(jobEstimateTextBox.Text, out jobEstimateCost) == false)
@@ -209,7 +211,7 @@ namespace TimeSheetProgram
             }
 
             //Check to see if there is a job status selected
-            if(JobStatus == "No Job Selected")
+            if (JobStatus == "No Job Selected")
             {
                 saveSuccessful = false;
                 jobStatusErrorLabel.Visible = true;
