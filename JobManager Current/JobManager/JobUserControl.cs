@@ -1,12 +1,8 @@
-﻿//Programer: Benjamin Hickmott
-//Project Name: Job Manager
-//Start Date: 02/27/15
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +12,9 @@ using GlobalVariables;
 
 namespace JobManager
 {
-    public partial class editJob : Form
+    public partial class JobUserControl : UserControl
     {
+
         private string jobName, jobNumber, currentUsername;
         public const string REQUIREDFOLDER = GlobalVars.REQUIREDFOLDER;
         public const string JOBFILEEXTENSHION = GlobalVars.JOBFILEEXTENSHION;
@@ -89,21 +86,17 @@ namespace JobManager
                 }
             }
         }
-
-        public editJob(string recivedUsername, string selectedJobNumber)
+                
+        public JobUserControl(string recivedUsername, string recivedJobNumber)
         {
             InitializeComponent();
             fillJobCodesList();
-            int cutAt = selectedJobNumber.IndexOf(" ");
-            selectedJobNumber = selectedJobNumber.Remove(cutAt);
-            jobNumberLabel.Text = selectedJobNumber;
-            jobNumber = selectedJobNumber;
+            jobNumberLabel.Text = recivedJobNumber;
+            jobNumber = recivedJobNumber;
             currentUsername = recivedUsername;
-            userNameLabel.Text = currentUsername;
-            this.Text = String.Format("Edit Job For {0}", currentUsername);
 
             jobControls loadSelectedJob = new jobControls(currentUsername);
-            loadSelectedJob.loadJob(selectedJobNumber);
+            loadSelectedJob.loadJob(recivedJobNumber);
             if (!String.IsNullOrWhiteSpace(loadSelectedJob.JobCode))
             {
                 if (jobCodesComboBox.Items.Contains(loadSelectedJob.JobCode))
@@ -127,12 +120,13 @@ namespace JobManager
                 }
             }
             DateTime lastWriteTime =
-                File.GetLastWriteTime(REQUIREDFOLDER + currentUsername + "\\" + selectedJobNumber + JOBFILEEXTENSHION);
+                File.GetLastWriteTime(REQUIREDFOLDER + currentUsername + "\\" + recivedJobNumber + JOBFILEEXTENSHION);
 
             lastTimeUpdateLabel.Text = String.Format("Last Time Updated: {0}{1}{2}{3}", Environment.NewLine,
                 lastWriteTime.ToShortDateString(), Environment.NewLine, lastWriteTime.ToShortDateString());
 
             jobNameLabel.Text = JobName;
+            loadSelectedJob = null;
 
         }
 
@@ -228,13 +222,8 @@ namespace JobManager
                 saveCurrentJob.saveJob(currentJobName, currentJobNumber, startDate, endDate,
                     jobEmployees, jobCode, jobEstimateCost, jobStatus, jobNotes);
                 saveCurrentJob = null;
-                DialogResult = DialogResult.OK;
+                closeJob();
             }
-        }
-
-        private void cancelSaveBtn_Click(object sender, EventArgs e)
-        {
-            DialogResult = DialogResult.Cancel;
         }
 
         private void addEmployeeBtn_Click(object sender, EventArgs e)
@@ -251,6 +240,21 @@ namespace JobManager
         private void deleteEmployeeBtn_Click(object sender, EventArgs e)
         {
             employeeListBox.Items.Remove(employeeListBox.SelectedItem);
+        }
+
+        private void deleteJobBtn_Click(object sender, EventArgs e)
+        {
+            jobControls deleteJob = new jobControls(CurrentUsername);
+            deleteJob.deleteJob(JobNumber);
+            closeJob();
+            deleteJob = null;
+        }
+
+        public void closeJob()
+        {
+            this.Parent.Parent.Controls.Remove(this.Parent);
+            this.Parent.TabIndex = 0;
+            this.Dispose();
         }
     }
 }

@@ -11,7 +11,7 @@ using System.IO;
 using System.Windows.Forms;
 using GlobalVariables;
 
-namespace TimeSheetProgram
+namespace JobManager
 {
     class jobControls
     {
@@ -232,19 +232,19 @@ namespace TimeSheetProgram
             loadSelectedJob.Close();
         }
 
-        public void editJob(string currentJobNumber, string currentJobName)
+        public void editJobNameAndNumber(string currentJobNumber, string currentJobName)
         {
-            newJobFrm changeJobName = new newJobFrm();
+            newJobFrm changeJobName = new newJobFrm(UserFolder, Convert.ToInt32(currentJobNumber));
             changeJobName.ShowDialog();
             if (changeJobName.DialogResult == DialogResult.OK)
             {
                 jobName = changeJobName.ReturnJobName;
                 jobNumber = changeJobName.ReturnJobNumber;
                 File.Move(DirectoryName + currentJobNumber + JOBFILEEXTENSHION, DirectoryName + jobNumber + JOBFILEEXTENSHION);
-                string jobNumberToChangeName = DirectoryName + jobNumber + JOBFILEEXTENSHION;
-                string text = File.ReadAllText(jobNumberToChangeName);
+                string jobFileNumberToChangeName = DirectoryName + jobNumber + JOBFILEEXTENSHION;
+                string text = File.ReadAllText(jobFileNumberToChangeName);
                 text = text.Replace(currentJobName, jobName);
-                File.WriteAllText(jobNumberToChangeName, text);
+                File.WriteAllText(jobFileNumberToChangeName, text);
             }
             else
             {

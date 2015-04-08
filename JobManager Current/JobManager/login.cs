@@ -15,7 +15,7 @@ using System.IO;
 using GlobalVariables;
 
 
-namespace TimeSheetProgram
+namespace JobManager
 {
     public partial class login : Form
     {
@@ -65,9 +65,18 @@ namespace TimeSheetProgram
             loginSuccess = user.accountLogin();
             if (loginSuccess == true)
             {
-                userScreenFrm UserScreen = new userScreenFrm(Username, Password);
-                UserScreen.Show();
-                this.Hide();                
+                if (Username.ToLower() != "admin")
+                {
+                    JobControlScreenFrm UserScreen = new JobControlScreenFrm(Username, Password);
+                    UserScreen.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    userScreenFrm UserScreen = new userScreenFrm(Username, Password);
+                    UserScreen.Show();
+                    this.Hide();
+                }
             }
             else
             {
@@ -83,7 +92,7 @@ namespace TimeSheetProgram
             forgotpassword.ShowDialog();
             if (forgotpassword.DialogResult == DialogResult.Cancel)
             {
-                MessageBox.Show("User Password Was NOT changed");
+                MessageBox.Show("User Password Was NOT changed", "Password Not Changed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

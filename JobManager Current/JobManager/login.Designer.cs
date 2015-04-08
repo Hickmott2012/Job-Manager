@@ -1,4 +1,4 @@
-﻿namespace TimeSheetProgram
+﻿namespace JobManager
 {
     partial class login
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.userNameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.passwordMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -123,6 +124,7 @@
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.userNameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "login";
             this.Text = "User Login";

@@ -11,7 +11,7 @@ using System.IO;
 using System.Windows.Forms;
 using GlobalVariables;
 
-namespace TimeSheetProgram
+namespace JobManager
 {
     public class userLogin
     {        
@@ -113,7 +113,7 @@ namespace TimeSheetProgram
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Oh No... File corrupted.");
+                    MessageBox.Show("Oh No... File corrupted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     success = false;
                 }
             }

@@ -1,4 +1,4 @@
-﻿namespace TimeSheetProgram
+﻿namespace JobManager
 {
     partial class newJobFrm
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newJobFrm));
             this.errorLable = new System.Windows.Forms.Label();
             this.newJobNameTextBox = new System.Windows.Forms.TextBox();
             this.newJobNumberLable = new System.Windows.Forms.Label();
@@ -35,6 +36,7 @@
             this.newJobNumberTextBox = new System.Windows.Forms.TextBox();
             this.newJobSubmitBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.errorNumExistLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // errorLable
@@ -54,7 +56,7 @@
             this.newJobNameTextBox.Location = new System.Drawing.Point(16, 29);
             this.newJobNameTextBox.Name = "newJobNameTextBox";
             this.newJobNameTextBox.Size = new System.Drawing.Size(240, 24);
-            this.newJobNameTextBox.TabIndex = 59;
+            this.newJobNameTextBox.TabIndex = 1;
             // 
             // newJobNumberLable
             // 
@@ -82,14 +84,14 @@
             this.newJobNumberTextBox.Location = new System.Drawing.Point(16, 82);
             this.newJobNumberTextBox.Name = "newJobNumberTextBox";
             this.newJobNumberTextBox.Size = new System.Drawing.Size(240, 24);
-            this.newJobNumberTextBox.TabIndex = 60;
+            this.newJobNumberTextBox.TabIndex = 2;
             // 
             // newJobSubmitBtn
             // 
             this.newJobSubmitBtn.Location = new System.Drawing.Point(15, 136);
             this.newJobSubmitBtn.Name = "newJobSubmitBtn";
             this.newJobSubmitBtn.Size = new System.Drawing.Size(117, 26);
-            this.newJobSubmitBtn.TabIndex = 56;
+            this.newJobSubmitBtn.TabIndex = 3;
             this.newJobSubmitBtn.Text = "Submit";
             this.newJobSubmitBtn.UseVisualStyleBackColor = true;
             this.newJobSubmitBtn.Click += new System.EventHandler(this.newJobSubmitBtn_Click);
@@ -100,10 +102,21 @@
             this.cancelBtn.Location = new System.Drawing.Point(138, 136);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(117, 26);
-            this.cancelBtn.TabIndex = 61;
+            this.cancelBtn.TabIndex = 4;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // errorNumExistLabel
+            // 
+            this.errorNumExistLabel.AutoSize = true;
+            this.errorNumExistLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorNumExistLabel.Location = new System.Drawing.Point(138, 61);
+            this.errorNumExistLabel.Name = "errorNumExistLabel";
+            this.errorNumExistLabel.Size = new System.Drawing.Size(131, 17);
+            this.errorNumExistLabel.TabIndex = 59;
+            this.errorNumExistLabel.Text = "Error: Number Exist";
+            this.errorNumExistLabel.Visible = false;
             // 
             // newJobFrm
             // 
@@ -111,7 +124,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelBtn;
-            this.ClientSize = new System.Drawing.Size(265, 171);
+            this.ClientSize = new System.Drawing.Size(272, 171);
+            this.Controls.Add(this.errorNumExistLabel);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.newJobNumberTextBox);
             this.Controls.Add(this.newJobNameTextBox);
@@ -119,6 +133,7 @@
             this.Controls.Add(this.newJobLable);
             this.Controls.Add(this.newJobSubmitBtn);
             this.Controls.Add(this.errorLable);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "newJobFrm";
             this.Text = "New Job";
             this.ResumeLayout(false);
@@ -135,5 +150,6 @@
         private System.Windows.Forms.TextBox newJobNumberTextBox;
         private System.Windows.Forms.Button newJobSubmitBtn;
         private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Label errorNumExistLabel;
     }
 }

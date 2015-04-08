@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.IO;
 using GlobalVariables;
 
-namespace TimeSheetProgram
+namespace JobManager
 {
     class userControls
     {
@@ -50,14 +50,14 @@ namespace TimeSheetProgram
             }
             catch (Exception)
             {
-                MessageBox.Show("Oh No... User Not Created.");
+                MessageBox.Show("Oh No... User Not Created.", "Error User Not Created", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         public void deleteUser(string userToDelete)
         {
             if (MessageBox.Show("Are You Sure You Want to Delete " + userToDelete
-                +  " and all there Jobs?", "Delete User", MessageBoxButtons.OKCancel,
+                +  " and all of their Jobs?", "Delete User", MessageBoxButtons.OKCancel,
                 MessageBoxIcon.Question) == DialogResult.OK)
             {
                 Directory.Delete(REQUIREDFOLDER + userToDelete, true);

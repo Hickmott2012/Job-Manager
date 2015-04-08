@@ -14,7 +14,7 @@ using System.Windows.Forms;
 using System.IO;
 using GlobalVariables;
 
-namespace TimeSheetProgram
+namespace JobManager
 {
     public partial class forgotPasswordFrm : Form
     {
@@ -103,7 +103,7 @@ namespace TimeSheetProgram
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Oh No... File corrupted.");
+                    MessageBox.Show("Oh No... File corrupted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     changePasswordResults = false;
                 }
             }

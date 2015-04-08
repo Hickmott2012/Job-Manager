@@ -1,4 +1,4 @@
-﻿namespace TimeSheetProgram
+﻿namespace JobManager
 {
     partial class forgotPasswordFrm
     {

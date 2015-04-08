@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TimeSheetProgram
+namespace JobManager
 {
     static class Program
     {
