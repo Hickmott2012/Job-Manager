@@ -1,4 +1,8 @@
-﻿using System;
+﻿//Programer: Benjamin Hickmott
+//Project Name: Job Manager
+//Start Date: 02/27/15
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -149,7 +153,38 @@ namespace JobManager
             ReadJobCodes.Close();
         }
 
-        private void saveJobButton_Click(object sender, EventArgs e)
+        private void addEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            //Add employee
+            if (!String.IsNullOrWhiteSpace(newEmployeeTextBox.Text))
+            {
+                employeeListBox.Items.Add(newEmployeeTextBox.Text);
+                newEmployeeTextBox.Text = String.Empty;
+                newEmployeeTextBox.Focus();
+            }
+        }
+
+        private void deleteEmployeeBtn_Click(object sender, EventArgs e)
+        {
+            employeeListBox.Items.Remove(employeeListBox.SelectedItem);
+        }
+
+        private void deleteJobBtn_Click(object sender, EventArgs e)
+        {
+            jobControls deleteJob = new jobControls(CurrentUsername);
+            deleteJob.deleteJob(JobNumber);
+            closeJob();
+            deleteJob = null;
+        }
+
+        public void closeJob()
+        {
+            this.Parent.Parent.Controls.Remove(this.Parent);
+            this.Parent.TabIndex = 0;
+            this.Dispose();
+        }
+
+        public void saveJob()
         {
             //Vairables
             bool saveSuccessful = true;
@@ -222,39 +257,35 @@ namespace JobManager
                 saveCurrentJob.saveJob(currentJobName, currentJobNumber, startDate, endDate,
                     jobEmployees, jobCode, jobEstimateCost, jobStatus, jobNotes);
                 saveCurrentJob = null;
-                closeJob();
             }
         }
 
-        private void addEmployeeBtn_Click(object sender, EventArgs e)
+        private void saveAndCloseButton_Click(object sender, EventArgs e)
         {
-            //Add employee
-            if (!String.IsNullOrWhiteSpace(newEmployeeTextBox.Text))
-            {
-                employeeListBox.Items.Add(newEmployeeTextBox.Text);
-                newEmployeeTextBox.Text = String.Empty;
-                newEmployeeTextBox.Focus();
-            }
-        }
-
-        private void deleteEmployeeBtn_Click(object sender, EventArgs e)
-        {
-            employeeListBox.Items.Remove(employeeListBox.SelectedItem);
-        }
-
-        private void deleteJobBtn_Click(object sender, EventArgs e)
-        {
-            jobControls deleteJob = new jobControls(CurrentUsername);
-            deleteJob.deleteJob(JobNumber);
+            saveJob();
             closeJob();
-            deleteJob = null;
         }
 
-        public void closeJob()
+        private void saveButton_Click(object sender, EventArgs e)
         {
-            this.Parent.Parent.Controls.Remove(this.Parent);
-            this.Parent.TabIndex = 0;
-            this.Dispose();
+            saveJob();
+        }
+
+        private void changeJobNameButton_Click(object sender, EventArgs e)
+        {
+            
+            string jobNumberSelected = JobNumber;
+            string jobNameSelected = JobNumber;
+            saveJob();
+            jobControls changeJobName = new jobControls(CurrentUsername);
+            changeJobName.editJobNameAndNumber(jobNumberSelected, jobNameSelected);
+            this.Parent.Name = changeJobName.JobNumber + "Tab";
+            this.Parent.Text = changeJobName.JobName + " " + changeJobName.JobNumber;
+            jobNameLabel.Text = changeJobName.JobName;
+            jobNumberLabel.Text = changeJobName.JobNumber;
+            jobName = changeJobName.JobName;
+            jobNumber = changeJobName.JobNumber;
+            changeJobName = null;
         }
     }
 }

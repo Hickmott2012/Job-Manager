@@ -34,7 +34,6 @@
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newJobToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteJobToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,16 +41,15 @@
             this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jobTabControl = new System.Windows.Forms.TabControl();
             this.jobListTabPage1 = new System.Windows.Forms.TabPage();
-            this.changeJobNameBtn = new System.Windows.Forms.Button();
+            this.jobControlsLabel = new System.Windows.Forms.Label();
+            this.jobControlsPanel = new System.Windows.Forms.Panel();
+            this.newJobBtn = new System.Windows.Forms.Button();
+            this.deleteJobBtn = new System.Windows.Forms.Button();
+            this.openJobButton = new System.Windows.Forms.Button();
             this.jobNumbersListBox = new System.Windows.Forms.ListBox();
             this.jobNamesListBox = new System.Windows.Forms.ListBox();
-            this.openJobButton = new System.Windows.Forms.Button();
-            this.deleteJobBtn = new System.Windows.Forms.Button();
             this.jobNameTextLabel = new System.Windows.Forms.Label();
             this.jobNumberLabel = new System.Windows.Forms.Label();
-            this.newJobBtn = new System.Windows.Forms.Button();
-            this.jobControlsPanel = new System.Windows.Forms.Panel();
-            this.jobControlsLabel = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
             this.jobTabControl.SuspendLayout();
             this.jobListTabPage1.SuspendLayout();
@@ -100,7 +98,6 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newJobToolStripMenuItem,
-            this.deleteJobToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -110,27 +107,19 @@
             // newJobToolStripMenuItem
             // 
             this.newJobToolStripMenuItem.Name = "newJobToolStripMenuItem";
-            this.newJobToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
+            this.newJobToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
             this.newJobToolStripMenuItem.Text = "New Job";
             this.newJobToolStripMenuItem.Click += new System.EventHandler(this.newJobToolStripMenuItem_Click);
-            // 
-            // deleteJobToolStripMenuItem
-            // 
-            this.deleteJobToolStripMenuItem.Name = "deleteJobToolStripMenuItem";
-            this.deleteJobToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
-            this.deleteJobToolStripMenuItem.Text = "Delete Job";
-            this.deleteJobToolStripMenuItem.Visible = false;
-            this.deleteJobToolStripMenuItem.Click += new System.EventHandler(this.deleteJobButton_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(146, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(132, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -183,58 +172,82 @@
             this.jobListTabPage1.TabIndex = 0;
             this.jobListTabPage1.Text = "Job List";
             // 
-            // changeJobNameBtn
+            // jobControlsLabel
             // 
-            this.changeJobNameBtn.Location = new System.Drawing.Point(21, 159);
-            this.changeJobNameBtn.Name = "changeJobNameBtn";
-            this.changeJobNameBtn.Size = new System.Drawing.Size(149, 31);
-            this.changeJobNameBtn.TabIndex = 66;
-            this.changeJobNameBtn.Text = "Change Job Name";
-            this.changeJobNameBtn.UseVisualStyleBackColor = true;
-            this.changeJobNameBtn.Visible = false;
-            this.changeJobNameBtn.Click += new System.EventHandler(this.changeJobNameBtn_Click);
+            this.jobControlsLabel.AutoSize = true;
+            this.jobControlsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jobControlsLabel.Location = new System.Drawing.Point(23, 20);
+            this.jobControlsLabel.Name = "jobControlsLabel";
+            this.jobControlsLabel.Size = new System.Drawing.Size(109, 20);
+            this.jobControlsLabel.TabIndex = 68;
+            this.jobControlsLabel.Text = "Job Controls:";
             // 
-            // jobNumbersListBox
+            // jobControlsPanel
             // 
-            this.jobNumbersListBox.FormattingEnabled = true;
-            this.jobNumbersListBox.ItemHeight = 16;
-            this.jobNumbersListBox.Location = new System.Drawing.Point(506, 52);
-            this.jobNumbersListBox.Name = "jobNumbersListBox";
-            this.jobNumbersListBox.Size = new System.Drawing.Size(226, 372);
-            this.jobNumbersListBox.TabIndex = 61;
-            this.jobNumbersListBox.SelectedIndexChanged += new System.EventHandler(this.jobNumbersListBox_SelectedIndexChanged);
+            this.jobControlsPanel.Controls.Add(this.newJobBtn);
+            this.jobControlsPanel.Controls.Add(this.deleteJobBtn);
+            this.jobControlsPanel.Controls.Add(this.openJobButton);
+            this.jobControlsPanel.Location = new System.Drawing.Point(6, 52);
+            this.jobControlsPanel.Name = "jobControlsPanel";
+            this.jobControlsPanel.Size = new System.Drawing.Size(190, 372);
+            this.jobControlsPanel.TabIndex = 67;
             // 
-            // jobNamesListBox
+            // newJobBtn
             // 
-            this.jobNamesListBox.FormattingEnabled = true;
-            this.jobNamesListBox.ItemHeight = 16;
-            this.jobNamesListBox.Location = new System.Drawing.Point(238, 52);
-            this.jobNamesListBox.Name = "jobNamesListBox";
-            this.jobNamesListBox.Size = new System.Drawing.Size(226, 372);
-            this.jobNamesListBox.TabIndex = 60;
-            this.jobNamesListBox.SelectedIndexChanged += new System.EventHandler(this.jobNamesListBox_SelectedIndexChanged);
+            this.newJobBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newJobBtn.Location = new System.Drawing.Point(18, 17);
+            this.newJobBtn.Name = "newJobBtn";
+            this.newJobBtn.Size = new System.Drawing.Size(154, 36);
+            this.newJobBtn.TabIndex = 52;
+            this.newJobBtn.Text = "New Job";
+            this.newJobBtn.UseVisualStyleBackColor = true;
+            this.newJobBtn.Click += new System.EventHandler(this.newJobToolStripMenuItem_Click);
+            // 
+            // deleteJobBtn
+            // 
+            this.deleteJobBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteJobBtn.Location = new System.Drawing.Point(18, 129);
+            this.deleteJobBtn.Name = "deleteJobBtn";
+            this.deleteJobBtn.Size = new System.Drawing.Size(154, 36);
+            this.deleteJobBtn.TabIndex = 57;
+            this.deleteJobBtn.Text = "Delete Job";
+            this.deleteJobBtn.UseVisualStyleBackColor = true;
+            this.deleteJobBtn.Visible = false;
+            this.deleteJobBtn.Click += new System.EventHandler(this.deleteJobButton_Click);
             // 
             // openJobButton
             // 
-            this.openJobButton.Location = new System.Drawing.Point(21, 63);
+            this.openJobButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openJobButton.Location = new System.Drawing.Point(18, 73);
             this.openJobButton.Name = "openJobButton";
-            this.openJobButton.Size = new System.Drawing.Size(149, 31);
+            this.openJobButton.Size = new System.Drawing.Size(154, 36);
             this.openJobButton.TabIndex = 59;
             this.openJobButton.Text = "Open Job";
             this.openJobButton.UseVisualStyleBackColor = true;
             this.openJobButton.Visible = false;
             this.openJobButton.Click += new System.EventHandler(this.openJobButton_Click);
             // 
-            // deleteJobBtn
+            // jobNumbersListBox
             // 
-            this.deleteJobBtn.Location = new System.Drawing.Point(21, 111);
-            this.deleteJobBtn.Name = "deleteJobBtn";
-            this.deleteJobBtn.Size = new System.Drawing.Size(149, 31);
-            this.deleteJobBtn.TabIndex = 57;
-            this.deleteJobBtn.Text = "Delete Job";
-            this.deleteJobBtn.UseVisualStyleBackColor = true;
-            this.deleteJobBtn.Visible = false;
-            this.deleteJobBtn.Click += new System.EventHandler(this.deleteJobButton_Click);
+            this.jobNumbersListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jobNumbersListBox.FormattingEnabled = true;
+            this.jobNumbersListBox.ItemHeight = 20;
+            this.jobNumbersListBox.Location = new System.Drawing.Point(506, 52);
+            this.jobNumbersListBox.Name = "jobNumbersListBox";
+            this.jobNumbersListBox.Size = new System.Drawing.Size(226, 364);
+            this.jobNumbersListBox.TabIndex = 61;
+            this.jobNumbersListBox.SelectedIndexChanged += new System.EventHandler(this.jobNumbersListBox_SelectedIndexChanged);
+            // 
+            // jobNamesListBox
+            // 
+            this.jobNamesListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jobNamesListBox.FormattingEnabled = true;
+            this.jobNamesListBox.ItemHeight = 20;
+            this.jobNamesListBox.Location = new System.Drawing.Point(238, 52);
+            this.jobNamesListBox.Name = "jobNamesListBox";
+            this.jobNamesListBox.Size = new System.Drawing.Size(226, 364);
+            this.jobNamesListBox.TabIndex = 60;
+            this.jobNamesListBox.SelectedIndexChanged += new System.EventHandler(this.jobNamesListBox_SelectedIndexChanged);
             // 
             // jobNameTextLabel
             // 
@@ -255,37 +268,6 @@
             this.jobNumberLabel.Size = new System.Drawing.Size(55, 20);
             this.jobNumberLabel.TabIndex = 54;
             this.jobNumberLabel.Text = "Job #:";
-            // 
-            // newJobBtn
-            // 
-            this.newJobBtn.Location = new System.Drawing.Point(21, 15);
-            this.newJobBtn.Name = "newJobBtn";
-            this.newJobBtn.Size = new System.Drawing.Size(149, 31);
-            this.newJobBtn.TabIndex = 52;
-            this.newJobBtn.Text = "New Job";
-            this.newJobBtn.UseVisualStyleBackColor = true;
-            this.newJobBtn.Click += new System.EventHandler(this.newJobToolStripMenuItem_Click);
-            // 
-            // jobControlsPanel
-            // 
-            this.jobControlsPanel.Controls.Add(this.newJobBtn);
-            this.jobControlsPanel.Controls.Add(this.changeJobNameBtn);
-            this.jobControlsPanel.Controls.Add(this.deleteJobBtn);
-            this.jobControlsPanel.Controls.Add(this.openJobButton);
-            this.jobControlsPanel.Location = new System.Drawing.Point(6, 52);
-            this.jobControlsPanel.Name = "jobControlsPanel";
-            this.jobControlsPanel.Size = new System.Drawing.Size(190, 372);
-            this.jobControlsPanel.TabIndex = 67;
-            // 
-            // jobControlsLabel
-            // 
-            this.jobControlsLabel.AutoSize = true;
-            this.jobControlsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jobControlsLabel.Location = new System.Drawing.Point(23, 20);
-            this.jobControlsLabel.Name = "jobControlsLabel";
-            this.jobControlsLabel.Size = new System.Drawing.Size(109, 20);
-            this.jobControlsLabel.TabIndex = 68;
-            this.jobControlsLabel.Text = "Job Controls:";
             // 
             // JobControlScreenFrm
             // 
@@ -334,8 +316,6 @@
         private System.Windows.Forms.Button newJobBtn;
         private System.Windows.Forms.ListBox jobNumbersListBox;
         private System.Windows.Forms.ListBox jobNamesListBox;
-        private System.Windows.Forms.ToolStripMenuItem deleteJobToolStripMenuItem;
-        private System.Windows.Forms.Button changeJobNameBtn;
         private System.Windows.Forms.Label jobControlsLabel;
         private System.Windows.Forms.Panel jobControlsPanel;
     }

@@ -162,6 +162,7 @@ namespace JobManager
 
         private void userNamesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            selectedUsersJobListBox.SelectedIndex = -1;
             if (userNamesListBox.SelectedIndex != -1)
             {
                 deleteUserBtn2.Visible = true;
@@ -188,6 +189,9 @@ namespace JobManager
                 createNewUser.createUser(newUserNameTextBox.Text, newUserPassowrdTextBox.Text);
                 fillCurrentUsersList();
                 createNewUser = null;
+                newUserNameTextBox.Text = null;
+                newUserPassowrdTextBox.Text = null;
+
             }
             else
             {
@@ -212,17 +216,31 @@ namespace JobManager
             }
             else
             {
-                deleteSelectedUserJobBtn.Visible = false;
-                editSelectedfUserJobBtn.Visible = false;
+                try
+                {
+                    deleteSelectedUserJobBtn.Visible = false;
+                    editSelectedfUserJobBtn.Visible = false;
+                }
+                catch
+                {
+
+                }
             }
         }
 
         private void deleteSelectedUserJobBtn_Click(object sender, EventArgs e)
         {
-            userControls deleteSelectedUserJob = new userControls();
-            deleteSelectedUserJob.deleteJobForSelectedUser(userNamesListBox.SelectedItem.ToString(), selectedUsersJobListBox.SelectedItem.ToString());
-            fillSelectedUsersJobList(userNamesListBox.SelectedItem.ToString());
-            deleteSelectedUserJobBtn = null;
+            try
+            {
+                userControls deleteSelectedUserJob = new userControls();
+                deleteSelectedUserJob.deleteJobForSelectedUser(userNamesListBox.SelectedItem.ToString(), selectedUsersJobListBox.SelectedItem.ToString());
+                fillSelectedUsersJobList(userNamesListBox.SelectedItem.ToString());
+                deleteSelectedUserJobBtn = null;
+            }
+            catch
+            {
+                MessageBox.Show("Error, Job Not Deleted", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void newJobBtn2_Click(object sender, EventArgs e)
@@ -255,11 +273,18 @@ namespace JobManager
 
         private void editSelectedfUserJobBtn_Click(object sender, EventArgs e)
         {
-            editJob editSelectedUsersJob = new editJob(userNamesListBox.SelectedItem.ToString(), selectedUsersJobListBox.SelectedItem.ToString());
-            editSelectedUsersJob.ShowDialog();
-            if (editSelectedUsersJob.DialogResult != DialogResult.OK)
+            try
             {
-                MessageBox.Show("Current Job Was Not Saved", "Error Job Not Saved", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                editJob editSelectedUsersJob = new editJob(userNamesListBox.SelectedItem.ToString(), selectedUsersJobListBox.SelectedItem.ToString());
+                editSelectedUsersJob.ShowDialog();
+                if (editSelectedUsersJob.DialogResult != DialogResult.OK)
+                {
+                    MessageBox.Show("Current Job Was Not Saved", "Error Job Not Saved", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error, No Job Selected", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

@@ -101,12 +101,12 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(172, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(99, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -451,7 +451,7 @@
             this.selectedUsersJobsTextLabel.Name = "selectedUsersJobsTextLabel";
             this.selectedUsersJobsTextLabel.Size = new System.Drawing.Size(153, 18);
             this.selectedUsersJobsTextLabel.TabIndex = 73;
-            this.selectedUsersJobsTextLabel.Text = "Selected Users Job\'s:";
+            this.selectedUsersJobsTextLabel.Text = "Selected Users\' Jobs:";
             this.selectedUsersJobsTextLabel.Visible = false;
             // 
             // deleteUserBtn2
@@ -471,9 +471,9 @@
             this.userNameTextLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameTextLabel2.Location = new System.Drawing.Point(20, 194);
             this.userNameTextLabel2.Name = "userNameTextLabel2";
-            this.userNameTextLabel2.Size = new System.Drawing.Size(99, 18);
+            this.userNameTextLabel2.Size = new System.Drawing.Size(107, 18);
             this.userNameTextLabel2.TabIndex = 70;
-            this.userNameTextLabel2.Text = "User Name\'s:";
+            this.userNameTextLabel2.Text = "Users\' Names:";
             // 
             // userNamesListBox
             // 

@@ -33,6 +33,8 @@
             this.jobNameLabel = new System.Windows.Forms.Label();
             this.jobNameLabelText = new System.Windows.Forms.Label();
             this.jobControlPanel = new System.Windows.Forms.Panel();
+            this.changeJobNameButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.deleteJobBtn = new System.Windows.Forms.Button();
             this.jobCodesComboBox = new System.Windows.Forms.ComboBox();
             this.jobStatusErrorLabel = new System.Windows.Forms.Label();
@@ -44,7 +46,7 @@
             this.jobEndDateLabel = new System.Windows.Forms.Label();
             this.jobStartDateLabel = new System.Windows.Forms.Label();
             this.lastTimeUpdateLabel = new System.Windows.Forms.Label();
-            this.saveJobButton = new System.Windows.Forms.Button();
+            this.saveAndCloseButton = new System.Windows.Forms.Button();
             this.jobEstimateTextBox = new System.Windows.Forms.TextBox();
             this.jobCostEstimateLabel = new System.Windows.Forms.Label();
             this.employeeLabel = new System.Windows.Forms.Label();
@@ -70,7 +72,7 @@
             // 
             this.jobNumberLabel.AutoSize = true;
             this.jobNumberLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jobNumberLabel.Location = new System.Drawing.Point(427, 23);
+            this.jobNumberLabel.Location = new System.Drawing.Point(583, 24);
             this.jobNumberLabel.Name = "jobNumberLabel";
             this.jobNumberLabel.Size = new System.Drawing.Size(150, 22);
             this.jobNumberLabel.TabIndex = 64;
@@ -80,7 +82,7 @@
             // 
             this.jobNumberLabelText.AutoSize = true;
             this.jobNumberLabelText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jobNumberLabelText.Location = new System.Drawing.Point(303, 23);
+            this.jobNumberLabelText.Location = new System.Drawing.Point(459, 24);
             this.jobNumberLabelText.Name = "jobNumberLabelText";
             this.jobNumberLabelText.Size = new System.Drawing.Size(112, 22);
             this.jobNumberLabelText.TabIndex = 63;
@@ -90,7 +92,7 @@
             // 
             this.jobNameLabel.AutoSize = true;
             this.jobNameLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jobNameLabel.Location = new System.Drawing.Point(122, 24);
+            this.jobNameLabel.Location = new System.Drawing.Point(130, 24);
             this.jobNameLabel.Name = "jobNameLabel";
             this.jobNameLabel.Size = new System.Drawing.Size(133, 22);
             this.jobNameLabel.TabIndex = 62;
@@ -100,7 +102,7 @@
             // 
             this.jobNameLabelText.AutoSize = true;
             this.jobNameLabelText.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jobNameLabelText.Location = new System.Drawing.Point(15, 24);
+            this.jobNameLabelText.Location = new System.Drawing.Point(23, 24);
             this.jobNameLabelText.Name = "jobNameLabelText";
             this.jobNameLabelText.Size = new System.Drawing.Size(95, 22);
             this.jobNameLabelText.TabIndex = 61;
@@ -108,6 +110,8 @@
             // 
             // jobControlPanel
             // 
+            this.jobControlPanel.Controls.Add(this.changeJobNameButton);
+            this.jobControlPanel.Controls.Add(this.saveButton);
             this.jobControlPanel.Controls.Add(this.deleteJobBtn);
             this.jobControlPanel.Controls.Add(this.jobCodesComboBox);
             this.jobControlPanel.Controls.Add(this.jobStatusErrorLabel);
@@ -119,7 +123,7 @@
             this.jobControlPanel.Controls.Add(this.jobEndDateLabel);
             this.jobControlPanel.Controls.Add(this.jobStartDateLabel);
             this.jobControlPanel.Controls.Add(this.lastTimeUpdateLabel);
-            this.jobControlPanel.Controls.Add(this.saveJobButton);
+            this.jobControlPanel.Controls.Add(this.saveAndCloseButton);
             this.jobControlPanel.Controls.Add(this.jobEstimateTextBox);
             this.jobControlPanel.Controls.Add(this.jobCostEstimateLabel);
             this.jobControlPanel.Controls.Add(this.employeeLabel);
@@ -133,9 +137,29 @@
             this.jobControlPanel.Size = new System.Drawing.Size(750, 370);
             this.jobControlPanel.TabIndex = 58;
             // 
+            // changeJobNameButton
+            // 
+            this.changeJobNameButton.Location = new System.Drawing.Point(360, 336);
+            this.changeJobNameButton.Name = "changeJobNameButton";
+            this.changeJobNameButton.Size = new System.Drawing.Size(204, 26);
+            this.changeJobNameButton.TabIndex = 61;
+            this.changeJobNameButton.Text = "Change Job Name && Number";
+            this.changeJobNameButton.UseVisualStyleBackColor = true;
+            this.changeJobNameButton.Click += new System.EventHandler(this.changeJobNameButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(187, 336);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(146, 26);
+            this.saveButton.TabIndex = 60;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
             // deleteJobBtn
             // 
-            this.deleteJobBtn.Location = new System.Drawing.Point(9, 337);
+            this.deleteJobBtn.Location = new System.Drawing.Point(14, 336);
             this.deleteJobBtn.Name = "deleteJobBtn";
             this.deleteJobBtn.Size = new System.Drawing.Size(146, 26);
             this.deleteJobBtn.TabIndex = 59;
@@ -236,22 +260,22 @@
             // lastTimeUpdateLabel
             // 
             this.lastTimeUpdateLabel.AutoSize = true;
-            this.lastTimeUpdateLabel.Location = new System.Drawing.Point(330, 289);
+            this.lastTimeUpdateLabel.Location = new System.Drawing.Point(330, 263);
             this.lastTimeUpdateLabel.Name = "lastTimeUpdateLabel";
             this.lastTimeUpdateLabel.Size = new System.Drawing.Size(132, 51);
             this.lastTimeUpdateLabel.TabIndex = 47;
             this.lastTimeUpdateLabel.Text = "Last Time Updated:\r\nMM/DD/YYYY\r\n00:00:00 am";
             this.lastTimeUpdateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // saveJobButton
+            // saveAndCloseButton
             // 
-            this.saveJobButton.Location = new System.Drawing.Point(589, 337);
-            this.saveJobButton.Name = "saveJobButton";
-            this.saveJobButton.Size = new System.Drawing.Size(146, 26);
-            this.saveJobButton.TabIndex = 1;
-            this.saveJobButton.Text = "Save and Close Job";
-            this.saveJobButton.UseVisualStyleBackColor = true;
-            this.saveJobButton.Click += new System.EventHandler(this.saveJobButton_Click);
+            this.saveAndCloseButton.Location = new System.Drawing.Point(591, 336);
+            this.saveAndCloseButton.Name = "saveAndCloseButton";
+            this.saveAndCloseButton.Size = new System.Drawing.Size(146, 26);
+            this.saveAndCloseButton.TabIndex = 1;
+            this.saveAndCloseButton.Text = "Save and Close Job";
+            this.saveAndCloseButton.UseVisualStyleBackColor = true;
+            this.saveAndCloseButton.Click += new System.EventHandler(this.saveAndCloseButton_Click);
             // 
             // jobEstimateTextBox
             // 
@@ -455,7 +479,7 @@
         private System.Windows.Forms.Label jobEndDateLabel;
         private System.Windows.Forms.Label jobStartDateLabel;
         private System.Windows.Forms.Label lastTimeUpdateLabel;
-        private System.Windows.Forms.Button saveJobButton;
+        private System.Windows.Forms.Button saveAndCloseButton;
         private System.Windows.Forms.TextBox jobEstimateTextBox;
         private System.Windows.Forms.Label jobCostEstimateLabel;
         private System.Windows.Forms.Label employeeLabel;
@@ -473,5 +497,7 @@
         private System.Windows.Forms.Label notesLabel;
         private System.Windows.Forms.TextBox jobNotesTextBox;
         private System.Windows.Forms.Button deleteJobBtn;
+        private System.Windows.Forms.Button changeJobNameButton;
+        private System.Windows.Forms.Button saveButton;
     }
 }

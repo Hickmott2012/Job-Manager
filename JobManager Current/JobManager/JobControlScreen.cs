@@ -1,4 +1,8 @@
-﻿using System;
+﻿//Programer: Benjamin Hickmott
+//Project Name: Job Manager
+//Start Date: 02/27/15
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,7 +68,6 @@ namespace JobManager
         private void JobControlScreenFrm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
-            //TODO: call the close function to save and close all windows
         }
         #endregion
 
@@ -72,7 +75,6 @@ namespace JobManager
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
-            //TODO: call the close function to save and close all windows
         }
 
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -122,7 +124,7 @@ namespace JobManager
             jobControls deleteJob = new jobControls(Username);
             deleteJob.deleteJob(jobNumbersListBox.SelectedItem.ToString());
             removeJobTab(jobNamesListBox.SelectedItem.ToString(), jobNumbersListBox.SelectedItem.ToString());
-            jobNumbersListBox.SelectedIndex = -1;
+            jobNumbersListBox.ClearSelected();
             fillJobList();
             deleteJob = null;
         }
@@ -175,21 +177,6 @@ namespace JobManager
             string selectedJobNumber = jobNumbersListBox.SelectedItem.ToString();
 
             openSelectedJob(selectedJobName, selectedJobNumber);
-        }
-
-        private void changeJobNameBtn_Click(object sender, EventArgs e)
-        {
-            string jobNumberSelected = jobNumbersListBox.SelectedItem.ToString();
-            string jobNameSelected = jobNamesListBox.SelectedItem.ToString();
-            jobControls changeJobName = new jobControls(Username);
-            changeJobName.editJobNameAndNumber(jobNumberSelected, jobNameSelected);
-            if (isJobOpenInTab(jobNamesListBox.SelectedItem.ToString(), jobNumbersListBox.SelectedItem.ToString()))
-            {
-                removeJobTab(jobNumberSelected + "Tab");
-                openSelectedJob(changeJobName.JobName, changeJobName.JobNumber, false);
-            }
-            fillJobList();
-            changeJobName = null;
         }
 
         public void removeJobTab(string jobName, string jobNumber)
@@ -288,18 +275,13 @@ namespace JobManager
             {
                 openJobButton.Visible = true;
                 deleteJobBtn.Visible = true;
-                deleteJobToolStripMenuItem.Visible = true;
-                changeJobNameBtn.Visible = true;
             }
             else
             {
                 openJobButton.Visible = false;
                 deleteJobBtn.Visible = false;
-                deleteJobToolStripMenuItem.Visible = false;
-                changeJobNameBtn.Visible = false;
             }
         }
         #endregion
-
     }
 }

@@ -102,7 +102,7 @@
             this.cancelSaveBtn.Name = "cancelSaveBtn";
             this.cancelSaveBtn.Size = new System.Drawing.Size(120, 26);
             this.cancelSaveBtn.TabIndex = 59;
-            this.cancelSaveBtn.Text = "Cancel Job";
+            this.cancelSaveBtn.Text = "Cancel";
             this.cancelSaveBtn.UseVisualStyleBackColor = true;
             this.cancelSaveBtn.Click += new System.EventHandler(this.cancelSaveBtn_Click);
             // 
